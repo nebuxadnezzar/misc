@@ -1,0 +1,125 @@
+<?xml version="1.0" ?>
+
+<project default="usage" basedir="." >
+
+   <property environment="env" />     <!-- we extract environment values here -->
+
+   <property name="project_name" value="BaggageRouter" />
+
+   <pathconvert property="root" dirsep="/">
+      <map from="${basedir}/" to=''/>
+      <path path="${basedir}/"/>
+   </pathconvert>
+
+   <property name="src"   value="${root}/" />
+   <property name="build" value="${root}/build" />
+   <property name="output" value="${root}/bin" />
+
+   <pathconvert property="jar.file" dirsep="/">
+      <map from="${output}/" to='${output}/'/>
+      <path location="${output}/${project_name}.jar"/>
+   </pathconvert>
+   
+   <path id="compile.classpath">
+
+        <pathelement path="${env.CLASSPATH}"/>
+
+    </path>
+
+   <!--========================================================================
+   ====   Help Targets
+   =========================================================================-->
+
+   <target name="printenv">
+     <echoproperties prefix="env"/>
+   </target>
+
+   <target name="print-all">
+     <echoproperties />
+   </target>
+
+   <target name="usage">
+     <echo message=""/>
+     <echo message="mybuild.xml build file"/>
+     <echo message="-----------------------------------"/>
+     <echo message=""/>
+     <echo message="Available targets are:"/>
+     <echo message=""/>
+     <echo message="build-all     --> Run compile and compress targets"/>
+     <echo message="compile       --> Compile java classes"/>
+     <echo message="compress      --> Create deployment war file"/>
+     <echo message="printenv      --> Print OS specific environment"/>
+     <echo message="print-all     --> Print all environment variables, OS, JVM etc"/>
+    </target>
+
+   <!--========================================================================
+   ====   Init Targets
+   =========================================================================-->
+
+   <target name="init">
+      <!-- <echo message="Making build directory" /> -->
+      <mkdir dir="${output}" />
+      <mkdir dir="${build}" />
+      <tstamp>
+        <format property="build.timestamp" pattern="yyyy-MM-dd HH:mm:ss" locale="en,US"/>
+      </tstamp>
+      <echo message="build.timestamp=${build.timestamp}" file="${build}/build-timestamp.properties"/>
+      <echo> basedir = ${root}</echo>
+      <echo> project = ${project_name}</echo>
+      <!--  <echoproperties prefix="env"/> -->
+   </target>
+
+    <target name="clean" description="Removes previous build">
+      <echo level="debug" message="Removing previous build" />
+      <delete dir="${build}"  />
+      <delete dir="${output}" />
+   </target>
+
+   <!--========================================================================
+   ====   Build Targets
+   =========================================================================-->
+
+   <target name="build-all" depends="compile,compress">
+
+   </target>
+
+   <target name="compile" depends="clean,init">
+      <echo level="debug" message="Compiling source..." />
+
+      <javac srcdir="${src}"
+             destdir="${build}"
+             fork="true"
+             debug="true"
+             debuglevel="lines,vars,source"
+             classpathref="compile.classpath"
+             includeantruntime="false" encoding="UTF8">
+        <compilerarg value="-Xlint"/>
+      </javac>
+   </target>
+
+   <target name="compress" depends="compile">
+
+        <pathconvert property="manifest.classpath" pathsep=" ">
+            <path refid="compile.classpath"/>
+            <mapper>
+            <chainedmapper>
+               <flattenmapper/>
+               <globmapper from="*.jar" to="lib/*.jar"/>
+            </chainedmapper>
+            </mapper>
+        </pathconvert>
+
+      <delete>
+       <fileset dir="${output}" includes="**/*.zip"/>
+      </delete>
+
+      <jar destfile="${jar.file}" basedir="${build}" duplicate="preserve">
+       <manifest>
+          <attribute name="Main-Class"
+                value="t.DfsRouter"/>
+        </manifest>
+      </jar>
+
+   </target>
+
+</project>
