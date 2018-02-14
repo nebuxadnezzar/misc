@@ -40,6 +40,7 @@ A8 A7 1
 A7 A6 1
 
 # Section: Departures
+```
 UA10 A1 MIA 08:00
 UA11 A1 LAX 09:00
 UA12 A1 JFK 09:45
@@ -49,6 +50,7 @@ UA15 A2 JFK 10:00
 UA16 A3 JFK 09:00
 UA17 A4 MHT 09:15
 UA18 A5 LAX 10:15
+```
 
 # Section: Bags
 0001 Concourse_A_Ticketing UA12
