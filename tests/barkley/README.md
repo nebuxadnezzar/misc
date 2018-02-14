@@ -27,6 +27,7 @@ The output should be in the same order as the Bag list section of the input.
  
 Example Input:
 # Section: Conveyor System
+```
 Concourse_A_Ticketing A5 5
 A5 BaggageClaim 5
 A5 A10 4
@@ -38,7 +39,7 @@ A10 A9 1
 A9 A8 1
 A8 A7 1
 A7 A6 1
-
+```
 # Section: Departures
 ```
 UA10 A1 MIA 08:00
@@ -53,16 +54,18 @@ UA18 A5 LAX 10:15
 ```
 
 # Section: Bags
+```
 0001 Concourse_A_Ticketing UA12
 0002 A5 UA17
 0003 A2 UA10
 0004 A8 UA18
 0005 A7 ARRIVAL
- 
+```
 Example Output:
+```
 0001 Concourse_A_Ticketing A5 A1 : 11
 0002 A5 A1 A2 A3 A4 : 9
 0003 A2 A1 : 1
 0004 A8 A9 A10 A5 : 6
 0005 A7 A8 A9 A10 A5 BaggageClaim : 12
-
+```
