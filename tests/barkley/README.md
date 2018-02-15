@@ -4,7 +4,7 @@
 1) ant build-all
 2) java -jar bin\BaggageRouter.jar 
 
-## This code provides solution following problem
+## This code provides solution for the following problem
 
 Denver International Airport has decided to give an automated baggage system another shot. The hardware and tracking systems from the previous attempt are still in place, they just need a system to route the baggage.  The system will route baggage checked, connecting, and terminating in Denver.
  
