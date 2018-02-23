@@ -1,7 +1,7 @@
 Assignment given by Adhoc.com
 ================================================
 
-# Calculate second lowest cost silver plan (SLCSP)
+## Calculate second lowest cost silver plan (SLCSP)
 
 Problem
 -------
@@ -63,7 +63,7 @@ and should be left blank.
 We will want to compile your code from source and run it, so please include the
 complete instructions for doing so in a COMMENTS file.
 
-##Data samples
+## Data samples
 
 `plans.csv`
 ```
