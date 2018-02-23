@@ -1,7 +1,7 @@
 Assignment given by Adhoc.com
 ================================================
 
-#Calculate second lowest cost silver plan (SLCSP)
+# Calculate second lowest cost silver plan (SLCSP)
 
 Problem
 -------
