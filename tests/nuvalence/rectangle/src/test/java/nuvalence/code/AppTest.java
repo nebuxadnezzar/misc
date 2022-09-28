@@ -51,7 +51,5 @@ public class AppTest
         assertTrue( App.isContained( r1, r2));
         assertTrue( App.isDetached( r3, r2));
         assertTrue( App.isOverlapped( r4, r2));
-        assertTrue( App.isTouching( r5, r2));
-        assertTrue( App.isAdjacent( r5, r2 ) == App.Adjacent.PARTIAL);
     }
 }
