@@ -1,8 +1,8 @@
 
-##Story
+## Story
 Alpaca Inc(?) presented me with this take home assignment described [here](pdf/Software_Engineering_Test.pdf).
 
-##Data
+## Data
 Sample file [here](data/lottery-300.txt)
 ```
 4 79 13 80 56
@@ -11,16 +11,16 @@ Sample file [here](data/lottery-300.txt)
 36 42 79 21 58
 ...
 ```
-###Building binary
+### Building binary
 ```
 make all
 ```
-###Running code
+### Running code
 ```
 make run arg1=~/path/to/10m-v2.txt
 ```
 
-###Run results
+### Run results
 
 ```
 go run cmd/cli.go ~/test-data/10m-v2.txt
@@ -43,7 +43,7 @@ report numbers , execution time 63.910126ms
 
 ```
 
-###Alpaca feedback
+### Alpaca feedback
 *I will leave it mostly uncommented ...*
 
 >Unfortunately you were not selected to advance to the next stage of screening.
