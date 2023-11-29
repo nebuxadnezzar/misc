@@ -5,9 +5,7 @@ import java.util.*;
 import java.text.*;
 import java.math.*;
 import java.util.regex.*;
-// Uncomment below classes to send network request if needed.
-// import java.net.HttpURLConnection;
-// import java.net.URL;
+
 
 class Main {
     public static void main(String args[] ) throws Exception {
@@ -45,11 +43,3 @@ class Main {
     }
     
 }
-
-
-/* 
-Pattern pattern = Pattern.compile("([XO]{3}(\\b|$)|(X[^X]{2}(\\b|$))|([^X]X[^X](\\b|$)){3}|([^X]{2}X(\\b|$)){3})");
-        Matcher match = pattern.matcher(s);
-        */
-
-
