@@ -13,11 +13,11 @@ Sample file [here](data/lottery-300.txt)
 ```
 __or__ to generate 10 million records lottery numbers file yourself
 ```ruby
-ruby -e '50000000.times.map{rand(1..99)}.each_with_index{|a,i| printf("\n") if i > 0 && i % 5 == 0; printf("%s ", a)}'
+ruby -e '50000000.times.map{rand(1..90)}.each_with_index{|a,i| printf("\n") if i > 0 && i % 5 == 0; printf("%s ", a)}'
 
 or to generate without trailing space
 
-ruby -e '50000000.times.map{rand(1..99)}.each_with_index{|a,i| if i > 0 then i % 5 == 0 ? printf("\n") : print(" ") end; printf("%d",a)}'
+ruby -e '50000000.times.map{rand(1..90)}.each_with_index{|a,i| if i > 0 then i % 5 == 0 ? printf("\n") : print(" ") end; printf("%d",a)}'
 ```
 ### Building binary
 ```
