@@ -1,6 +1,6 @@
 
 ## Story
-Alpaca Inc(?) presented me with this take home assignment described [here](pdf/Software_Engineering_Test.pdf).
+__Alpaca Inc(?)__ presented me with this take home assignment described [here](pdf/Software_Engineering_Test.pdf).
 
 ## Data
 Sample file [here](data/lottery-300.txt)
@@ -10,6 +10,14 @@ Sample file [here](data/lottery-300.txt)
 41 65 39 82 36
 36 42 79 21 58
 ...
+```
+__or__ to generate 10 million records lottery numbers file yourself
+```ruby
+ruby -e '50000000.times.map{rand(1..99)}.each_with_index{|a,i| printf("\n") if i > 0 && i % 5 == 0; printf("%s ", a)}'
+
+or to generate without trailing space
+
+ruby -e '100.times.map{rand(1..99)}.each_with_index{|a,i| if i > 0 then i % 5 == 0 ? printf("\n") : print(" ") end; printf("%d",a)}'
 ```
 ### Building binary
 ```
@@ -60,7 +68,7 @@ report numbers , execution time 63.910126ms
 >- It doesn't implement the assignment (e.g. it should return the number of winners with 5, 4, 3 and 2  matches) <span style="color:blue">*Why?*</span>
 >- No unit tests <span style="color:blue">*None were required in the assignment.*</span>
 >- No validation of the lotto numbers (e.g they should be in the range of [1 ... 90], each line should contain 5 entries)
->- O(N) solution with a constant less than one <span style="color:blue">*Is it bad?*</span>
+>- O(N) solution with a constant less than one <span style="color:blue">*Is sub-linear solution that searches 10 million records in ~60ms bad?*</span>
 >- The prompt handling requires external utilities (stty) instead of relying on libraries
 >- CTRL-C handling should be done using signals instead of terminal manipulation
 >- Anding the bitsets could be done inplace preventing unnecessary memory allocation in cmd.op

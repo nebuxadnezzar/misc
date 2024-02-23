@@ -99,3 +99,6 @@ zipcode,rate
 79168,
 54923,
 ```
+
+## Solution Acceptance
+Correct (by my estmate). Never heard from them back.

@@ -12,3 +12,6 @@ Approach
 --------
 
 I created Rect object that would take 4 constructor parameters: x coordinate, y coordinate, height, width. Then I represented each side of a rectangle as set of coordinate points. Thus I calculated intersection, containment, detachment as relations between different coordinate point sets.
+
+## Solution Acceptance
+Partially correct according to the assignment originators.

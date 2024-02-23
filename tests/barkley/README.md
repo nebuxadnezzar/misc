@@ -2,29 +2,29 @@
 # Aeroport Baggage
 ## Build and Run instruction
 1) ant build-all
-2) java -jar bin\BaggageRouter.jar 
+2) java -jar bin\BaggageRouter.jar
 
 ## This code provides solution for the following problem
 
-Denver International Airport has decided to give an automated baggage system another shot. The hardware and tracking systems from the previous attempt are still in place, they just need a system to route the baggage.  The system will route baggage checked, connecting, and terminating in Denver.
- 
-You have been asked to implement a system that will route bags to their flights or the proper baggage claim.  The input describes the airport conveyor system, the departing flights, and the bags to be routed.  The output is the optimal routing to get bags to their destinations.  
-Bags with a flight id of “ARRIVAL” are terminating in Denver are routed to Baggage Claim.
+Denver International Airport has decided to give an automated baggage system another shot. The hardware and tracking systems from the previous attempt are still in place, they just need a system to route the baggage.ï¿½ The system will route baggage checked, connecting, and terminating in Denver.
+ï¿½
+You have been asked to implement a system that will route bags to their flights or the proper baggage claim.ï¿½ The input describes the airport conveyor system, the departing flights, and the bags to be routed.ï¿½ The output is the optimal routing to get bags to their destinations.ï¿½
+Bags with a flight id of ï¿½ARRIVALï¿½ are terminating in Denver are routed to Baggage Claim.
 
-Input: The input consists of several sections.  
-The beginning of each section is marked by a line starting: “# Section:”
+Input: The input consists of several sections.ï¿½
+The beginning of each section is marked by a line starting: ï¿½# Section:ï¿½
 Section 1: A weighted bi-directional graph describing the conveyor system.
 Format: <Node 1> <Node 2> <travel_time>
 Section 2: Departure list Format:
 <flight_id> <flight_gate> <destination> <flight_time>
-Section 3: Bag list Format: 		
+Section 3: Bag list Format:
 <bag_number> <entry_point> <flight_id>
- 
+ï¿½
 Output: The optimized route for each bag
-<Bag_Number> <point_1> <point_2> [<point_3>, …] : <total_travel_time>
+<Bag_Number> <point_1> <point_2> [<point_3>, ï¿½] : <total_travel_time>
 
 The output should be in the same order as the Bag list section of the input.
- 
+ï¿½
 Example Input:
 ## Section: Conveyor System
 ```
@@ -69,3 +69,6 @@ UA18 A5 LAX 10:15
 0004 A8 A9 A10 A5 : 6
 0005 A7 A8 A9 A10 A5 BaggageClaim : 12
 ```
+
+## Solution Acceptance
+Correct (by my estmate). They said it was incorrect, no explanation given.
