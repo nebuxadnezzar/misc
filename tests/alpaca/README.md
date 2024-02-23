@@ -17,7 +17,7 @@ ruby -e '50000000.times.map{rand(1..99)}.each_with_index{|a,i| printf("\n") if i
 
 or to generate without trailing space
 
-ruby -e '100.times.map{rand(1..99)}.each_with_index{|a,i| if i > 0 then i % 5 == 0 ? printf("\n") : print(" ") end; printf("%d",a)}'
+ruby -e '50000000.times.map{rand(1..99)}.each_with_index{|a,i| if i > 0 then i % 5 == 0 ? printf("\n") : print(" ") end; printf("%d",a)}'
 ```
 ### Building binary
 ```
